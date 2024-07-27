@@ -34,7 +34,7 @@ export function LoginPage(){
                             <div className='flex flex-col space-y-4'>
                                 <h2 className='font-bold text-lg font-sans'>Usuário</h2>
                                 <div className='flex flex-col'>
-                                    <input className='rounded-md border-2 border-zinc-400 p-3 w-auto'
+                                    <input className='rounded-md border-2 border-zinc-400 p-3 w-auto focus:outline-red-600 focus:border-white'
                                         type="text"
                                         placeholder='Insira seu e-mail ou CPF'    
                                     />
