@@ -1,5 +1,7 @@
 export function LoginScreen(){
     return(
-        <h1>Hello LoginScreen</h1>
+        <div className="h-screen bg-gradient-to-t from-red-500 to-red-700">
+            <h1 className="flex justify-end text-zinc-500 font-bold">teste</h1>
+        </div>
     )
 }
