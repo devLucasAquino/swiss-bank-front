@@ -1,8 +1,23 @@
-import { CircleHelp, User } from "lucide-react";
+import { useState } from "react";
+
+import { ChevronLeft, CircleHelp, User } from "lucide-react";
 
 import { RegisterStep1 } from "../login-page/register-step1-modal";
+import { RegisterStep2 } from "../login-page/register-step-2-modal";
+
+
 
 export function RegisterPage(){
+
+    const [ filledRegisterStep1, setFilledRegisterStep1 ] = useState(false);
+
+    function FilledRegisterStep1(){
+        setFilledRegisterStep1(true);
+    }
+
+    const [ ufSelected, setUfSelected ] = useState("");
+
+
     return(
         <div className="h-auto flex justify-center flex-col bg-gradient-to-t from-red-700 to-red-800 gap-24 bg-no-repeat bg-center">
 
@@ -20,8 +35,31 @@ export function RegisterPage(){
                 </div>
             </div>
 
-            
-            <RegisterStep1 />
+
+
+            {!filledRegisterStep1 && (
+                <RegisterStep1 FilledRegisterStep1={FilledRegisterStep1} />
+            )}
+
+            {filledRegisterStep1 && (
+                <RegisterStep2 ufSelected={ufSelected} setUfSelected={setUfSelected} />
+            )}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

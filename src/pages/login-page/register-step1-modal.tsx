@@ -1,6 +1,12 @@
 import { ChevronLeft } from "lucide-react";
 
-export function RegisterStep1(){
+interface RegisterStep1Props{
+    FilledRegisterStep1: () => void,
+}
+
+export function RegisterStep1({
+    FilledRegisterStep1,
+}:RegisterStep1Props){
     return(
                     <form className='w-full flex justify-center items-center'>
                         <div className='flex flex-col space-y-10 bg-white rounded-2xl w-[640px] px-9 py-14'>
@@ -19,8 +25,6 @@ export function RegisterStep1(){
 
                             <div className='space-y-3'>
                                 
-
-                            
                                     <div className='flex flex-col space-y-2'>
                                         <h2 className='font-bold text-lg font-sans'>Nome completo</h2>
                                         <input className='rounded-md border-2 border-zinc-400 p-3 w-auto'
@@ -61,13 +65,10 @@ export function RegisterStep1(){
                                         />
                                     </div>
 
-
-
-                                
                             </div>
 
                             <div className='flex justify-center'>
-                                <button className='bg-red-600 py-2 px-20 rounded-xl hover:bg-red-700'>
+                                <button onClick={FilledRegisterStep1} className='bg-red-600 py-2 px-20 rounded-xl hover:bg-red-700'>
                                     <span className='text-zinc-50 font-bold text-lg'>Avançar</span>
                                 </button>
                             </div>
