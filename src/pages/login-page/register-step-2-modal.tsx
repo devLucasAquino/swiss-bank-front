@@ -3,11 +3,13 @@ import { ChevronLeft } from "lucide-react"
 interface RegisterStep2Props{
     ufSelected: string,
     setUfSelected: (value: string) => void,
+    FilledRegisterStep2: () => void,
 }
 
 export function RegisterStep2({
     ufSelected,
     setUfSelected,
+    FilledRegisterStep2,
 }:RegisterStep2Props){
 
     const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -113,7 +115,7 @@ export function RegisterStep2({
                      </div>
 
                      <div className='flex justify-center'>
-                         <button  className='bg-red-600 py-2 px-20 rounded-xl hover:bg-red-700'>
+                         <button onClick={FilledRegisterStep2} className='bg-red-600 py-2 px-20 rounded-xl hover:bg-red-700'>
                              <span className='text-zinc-50 font-bold text-lg'>Avançar</span>
                          </button>
                      </div>
