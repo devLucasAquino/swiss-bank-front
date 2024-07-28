@@ -1,4 +1,6 @@
+import axios from "axios";
 import { ChevronLeft } from "lucide-react"
+import { useState } from "react";
 
 interface RegisterStep2Props{
     ufSelected: string,
@@ -15,6 +17,18 @@ export function RegisterStep2({
     const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         setUfSelected(event.target.value);
     };
+
+    const [inputValue, setInputValue] = useState('');
+    const [ adress, setAdress ] = useState({})
+
+    const handleBlur = () => {
+        axios.get(`https://viacep.com.br/ws/${inputValue}/json/`).then(
+            response => setAdress(response.data)
+        )
+    };
+
+    
+   
 
     const UFs = [
         { state: "Acre", acronym: "AC" },
@@ -45,7 +59,7 @@ export function RegisterStep2({
         { state: "Sergipe", acronym: "SE" },
         { state: "Tocantins", acronym: "TO" }
     ];
-
+    
 
     return(
         <form className='w-full flex justify-center items-center'>
@@ -68,8 +82,11 @@ export function RegisterStep2({
                              <div className='flex flex-col space-y-2'>
                                  <h2 className='font-bold text-lg font-sans'>CEP</h2>
                                  <input className='rounded-md border-2 border-zinc-400 p-3 w-auto'
-                                     type="text"
-                                     placeholder='Insira seu CEP'    
+                                    type="text"
+                                    placeholder='Insira seu CEP'
+                                    value={inputValue}
+                                    onChange={(e) => setInputValue(e.target.value)}
+                                    onBlur={handleBlur}
                                  />
                              </div>
 
@@ -78,6 +95,7 @@ export function RegisterStep2({
                                 <div className='flex flex-col space-y-2 flex-1'>
                                     <h2 className='font-bold text-lg font-sans'>Cidade</h2>
                                     <input className='rounded-md border-2 border-zinc-400 p-3 w-auto'
+                                        value={}
                                         type="text"
                                         placeholder='dd/mm/aaaa'    
                                     />
