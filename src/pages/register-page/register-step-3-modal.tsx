@@ -51,6 +51,6 @@ export function RegisterStep3({
                         </div>
 
                     </div>
-                </form>
+        </form>
     )
 }
