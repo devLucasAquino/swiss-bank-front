@@ -37,7 +37,7 @@ export function RegisterPage(){
 
 
     return(
-        <div className="h-auto flex justify-center flex-col bg-gradient-to-t from-red-700 to-red-800 gap-24 bg-no-repeat bg-center">
+        <div className="h-auto scale- flex justify-center flex-col bg-gradient-to-t from-red-700 to-red-800 gap-24">
 
             <LoginAndRegisterHeader />
 
@@ -60,8 +60,6 @@ export function RegisterPage(){
             )}
 
             <LoginAndRegisterFooter />
-
-
 
         </div>
     )
