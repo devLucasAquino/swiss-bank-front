@@ -5,6 +5,7 @@ import { RegisterStep2 } from "./steps/register-step-2-modal";
 import { RegisterStep3 } from "./steps/register-step-3-modal";
 import { CompleteRegister } from "./steps/complete-register-moda";
 import { LoginAndRegisterHeader } from "../../components/login-and-register-header";
+import { LoginAndRegisterFooter } from "../../components/login-and-register-footer";
 
 
 
@@ -40,8 +41,6 @@ export function RegisterPage(){
 
             <LoginAndRegisterHeader />
 
-
-
             {registerStep1 && (
                 <RegisterStep1 FilledRegisterStep1={FilledRegisterStep1} />
             )}
@@ -60,11 +59,10 @@ export function RegisterPage(){
                 <CompleteRegister />
             )}
 
+            <LoginAndRegisterFooter />
 
 
-            <div className='flex w-full justify-center'>
-                <p className='text-zinc-50 font-semibold'>© SwissWallet - 2024</p>
-            </div>
+
         </div>
     )
 }
