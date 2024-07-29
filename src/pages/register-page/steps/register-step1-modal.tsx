@@ -1,6 +1,8 @@
 import { ChevronLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
+import { UserInput } from "../../../components/user-input";
+
 interface RegisterStep1Props{
     FilledRegisterStep1: () => void,
 }
@@ -28,45 +30,35 @@ export function RegisterStep1({
 
                             <div className='space-y-3'>
                                 
-                                    <div className='flex flex-col space-y-2'>
-                                        <h2 className='font-bold text-lg font-sans'>Nome completo</h2>
-                                        <input className='rounded-md border-2 border-zinc-400 p-3 w-auto'
-                                            type="text"
-                                            placeholder='Insira seu nome completo'    
-                                        />
-                                    </div>
+                                    <UserInput 
+                                        title="Nome Completo" 
+                                        subtitle="Insira seu nome completo"
+                                        inputType="text"
+                                    />
 
-                                    <div className='flex flex-col space-y-2'>
-                                        <h2 className='font-bold text-lg font-sans'>Data de nascimento</h2>
-                                        <input className='rounded-md border-2 border-zinc-400 p-3 w-auto'
-                                            type="text"
-                                            placeholder='dd/mm/aaaa'    
-                                        />
-                                    </div>
+                                    <UserInput 
+                                        title="Data de Nascimento" 
+                                        subtitle="dd/mm/aaaa"
+                                        inputType="text"
+                                    />
 
-                                    <div className='flex flex-col space-y-2'>
-                                        <h2 className='font-bold text-lg font-sans'>E-mail</h2>
-                                        <input className='rounded-md border-2 border-zinc-400 p-3 w-auto'
-                                            type="text"
-                                            placeholder='Insira seu e-mail'    
-                                        />
-                                    </div>
+                                    <UserInput 
+                                        title="E-mail" 
+                                        subtitle="Insira seu e-mail"
+                                        inputType="e-mail"
+                                    />
 
-                                    <div className='flex flex-col space-y-2'>
-                                        <h2 className='font-bold text-lg font-sans'>CPF</h2>
-                                        <input className='rounded-md border-2 border-zinc-400 p-3 w-auto'
-                                            type="text"
-                                            placeholder='Insira seu CPF'    
-                                        />
-                                    </div>
+                                    <UserInput 
+                                        title="CPF" 
+                                        subtitle="Insira seu CPF"
+                                        inputType="text"
+                                    />
 
-                                    <div className='flex flex-col space-y-2'>
-                                        <h2 className='font-bold text-lg font-sans'>Telefone</h2>
-                                        <input className='rounded-md border-2 border-zinc-400 p-3 w-auto'
-                                            type="text"
-                                            placeholder='Insira seu telefone'    
-                                        />
-                                    </div>
+                                    <UserInput 
+                                        title="Telefone" 
+                                        subtitle="Insira seu telefone"
+                                        inputType="text"
+                                    />
 
                             </div>
 

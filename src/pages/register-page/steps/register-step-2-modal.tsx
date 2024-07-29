@@ -2,6 +2,8 @@ import axios from "axios";
 import { ChevronDown, ChevronLeft } from "lucide-react"
 import { useState } from "react";
 
+import { UserInput } from "../../../components/user-input";
+
 
 interface Adress{
     cep: string,
