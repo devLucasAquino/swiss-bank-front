@@ -11,17 +11,14 @@ import { CompleteRegister } from "./steps/complete-register-moda";
 
 export function RegisterPage(){
 
+
+    // Estados para gerenciar passos de cadastro
     const [ registerStep1, setRegisterStep1 ] = useState(true);
-
-
     const [ filledRegisterStep1, setFilledRegisterStep1 ] = useState(false);
-
-
     const [ filledRegisterStep2, setFilledRegisterStep2 ] = useState(false);
-
     const [ completedRegister, setCompletedRegister ] = useState(false);
 
-
+    // Funções para gerenciar os estados
     function FilledRegisterStep1(){
         setRegisterStep1(false);
         setFilledRegisterStep1(true);
@@ -75,6 +72,8 @@ export function RegisterPage(){
             {completedRegister && (
                 <CompleteRegister />
             )}
+
+
 
             <div className='flex w-full justify-center'>
                 <p className='text-zinc-50 font-semibold'>© SwissWallet - 2024</p>
