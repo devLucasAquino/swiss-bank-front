@@ -2,8 +2,8 @@ import { useState } from "react";
 
 import { ChevronLeft, CircleHelp, User } from "lucide-react";
 
-import { RegisterStep1 } from "../login-page/register-step1-modal";
-import { RegisterStep2 } from "../login-page/register-step-2-modal";
+import { RegisterStep1 } from "./register-step1-modal";
+import { RegisterStep2 } from "./register-step-2-modal";
 
 
 
@@ -13,7 +13,6 @@ export function RegisterPage(){
     const [ filledRegisterStep1, setFilledRegisterStep1 ] = useState(false);
     const [ filledRegisterStep2, setFilledRegisterStep2 ] = useState(false);
 
-    const [ ufSelected, setUfSelected ] = useState("");
 
     function FilledRegisterStep1(){
         setRegisterStep1(false);
@@ -50,9 +49,7 @@ export function RegisterPage(){
             )}
 
             {filledRegisterStep1 && (
-                <RegisterStep2 
-                    ufSelected={ufSelected} 
-                    setUfSelected={setUfSelected} 
+                <RegisterStep2
                     FilledRegisterStep2={FilledRegisterStep2}
                 />
             )}
