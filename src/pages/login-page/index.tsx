@@ -6,7 +6,7 @@ export function LoginPage(){
 
 
     return(
-        <div className="h-auto flex justify-center flex-col bg-gradient-to-t from-red-700 to-red-800 gap-24 bg-no-repeat bg-center">
+        <div className="h-screen flex justify-center flex-col bg-gradient-to-t from-red-700 to-red-800 gap-24 bg-no-repeat bg-center">
 
             <div className='w-full flex justify-between mt-11 px-28'>
                 <div className='flex space-x-4'>
