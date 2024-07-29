@@ -13,10 +13,12 @@ interface Adress{
 
 interface RegisterStep2Props{
     FilledRegisterStep2: () => void,
+    BackRegisterStep1: () => void,
 }
 
 export function RegisterStep2({
     FilledRegisterStep2,
+    BackRegisterStep1,
 }:RegisterStep2Props){
 
 
@@ -34,7 +36,7 @@ export function RegisterStep2({
                  <div className='flex flex-col space-y-10 bg-white rounded-2xl w-[640px] px-9 py-14'>
 
                      <div className="space-y-6"> 
-                         <button className='size-12 bg-red-700 rounded-full justify-start'>
+                         <button onClick={BackRegisterStep1} className='size-12 bg-red-700 rounded-full justify-start'>
                              <div className='flex justify-center'>
                                 <ChevronLeft className='size-8 text-zinc-50'/>
                              </div>

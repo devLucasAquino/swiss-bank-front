@@ -2,17 +2,19 @@ import { ChevronLeft } from "lucide-react";
 
 interface RegisterStep3Props{
     CompletedRegister: () => void,
+    BackRegisterStep2: () => void,
 }
 
 export function RegisterStep3({
-    CompletedRegister
+    CompletedRegister,
+    BackRegisterStep2,
 }:RegisterStep3Props){
     return(  
         <form className='w-full flex justify-center items-center'>
                     <div className='flex flex-col space-y-10 bg-white rounded-2xl w-[640px] px-9 py-14'>
 
                         <div className="space-y-6"> 
-                            <button className='size-12 bg-red-700 rounded-full justify-start'>
+                            <button onClick={BackRegisterStep2} className='size-12 bg-red-700 rounded-full justify-start'>
                                 <div className='flex justify-center'>
                                 <ChevronLeft className='size-8 text-zinc-50'/>
                                 </div>

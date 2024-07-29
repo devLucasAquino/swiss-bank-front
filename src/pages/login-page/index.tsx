@@ -20,13 +20,12 @@ export function LoginPage(){
 
             <LoginAndRegisterHeader />
 
-
             {userLogin && (
                 <UserLogin OpenPasswordLogin={OpenPasswordLogin}/>
             )}
 
             {passwordLogin && (
-                 <PasswordLogin />
+                <PasswordLogin />
             )}
 
             <LoginAndRegisterFooter />

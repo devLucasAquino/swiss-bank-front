@@ -18,7 +18,7 @@ export function RegisterPage(){
     const [ filledRegisterStep2, setFilledRegisterStep2 ] = useState(false);
     const [ completedRegister, setCompletedRegister ] = useState(false);
 
-    // Funções para gerenciar os estados
+    // Funções para avançar entre os estados de registro
     function FilledRegisterStep1(){
         setRegisterStep1(false);
         setFilledRegisterStep1(true);
@@ -34,25 +34,42 @@ export function RegisterPage(){
         setCompletedRegister(true);
     }
 
+    // Funções para retornar entre os estados de registro
+    function BackRegisterStep1(){
+        setFilledRegisterStep1(false);
+        setRegisterStep1(true);
+    }
+
+    function BackRegisterStep2(){
+        setFilledRegisterStep2(false);
+        setFilledRegisterStep1(true);
+    }
+
 
 
     return(
-        <div className="h-auto scale- flex justify-center flex-col bg-gradient-to-t from-red-700 to-red-800 gap-24">
+        <div className="h-auto flex justify-center flex-col bg-gradient-to-t from-red-700 to-red-800 gap-24">
 
             <LoginAndRegisterHeader />
 
             {registerStep1 && (
-                <RegisterStep1 FilledRegisterStep1={FilledRegisterStep1} />
+                <RegisterStep1 
+                    FilledRegisterStep1={FilledRegisterStep1} 
+                />
             )}
 
             {filledRegisterStep1 && (
                 <RegisterStep2
                     FilledRegisterStep2={FilledRegisterStep2}
+                    BackRegisterStep1={BackRegisterStep1}
                 />
             )}
 
             {filledRegisterStep2 && (
-                <RegisterStep3 CompletedRegister={CompletedRegister} />
+                <RegisterStep3 
+                    CompletedRegister={CompletedRegister}
+                    BackRegisterStep2={BackRegisterStep2}
+                />
             )}
 
             {completedRegister && (

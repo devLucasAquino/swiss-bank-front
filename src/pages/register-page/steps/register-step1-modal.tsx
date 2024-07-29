@@ -1,4 +1,5 @@
 import { ChevronLeft } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface RegisterStep1Props{
     FilledRegisterStep1: () => void,
@@ -11,12 +12,14 @@ export function RegisterStep1({
                     <form className='w-full flex justify-center items-center'>
                         <div className='flex flex-col space-y-10 bg-white rounded-2xl w-[640px] px-9 py-14'>
 
-                            <div className="space-y-6"> 
-                                <button className='size-12 bg-red-700 rounded-full justify-start'>
-                                    <div className='flex justify-center'>
-                                        <ChevronLeft className='size-8 text-zinc-50'/>
-                                    </div>
-                                </button>
+                            <div className="space-y-6">
+                                <Link to={`/`}>
+                                    <button className='size-12 bg-red-700 rounded-full justify-start'>
+                                        <div className='flex justify-center'>
+                                            <ChevronLeft className='size-8 text-zinc-50'/>
+                                        </div>
+                                    </button>
+                                </Link>
                                 <div>
                                     <h3 className='text-3xl font-bold font-sans'>Cadastre-se</h3>
                                     <p className='font-medium text-zinc-600'>Todos os campos são obrigatórios.</p>
