@@ -34,7 +34,7 @@ export function RegisterPage(){
     const [ logradouro, setLogradouro ] = useState('');
 
     // Estados para armazenar dados do cadastro step 3
-    // const [ password, setPassword ] = useState('');
+    const [ password, setPassword ] = useState('');
 
 
     // Funções para avançar entre os estados de registro
@@ -66,6 +66,7 @@ export function RegisterPage(){
 
     function CompletedRegister(){
         setFilledRegisterStep2(false);
+        console.log(`password: ${password}`)
         setCompletedRegister(true);
     }
 
@@ -116,6 +117,8 @@ export function RegisterPage(){
                 <RegisterStep3 
                     CompletedRegister={CompletedRegister}
                     BackRegisterStep2={BackRegisterStep2}
+
+                    setPassword={setPassword}
 
                 />
             )}

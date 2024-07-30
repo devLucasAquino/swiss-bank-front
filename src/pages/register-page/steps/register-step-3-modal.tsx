@@ -6,36 +6,35 @@ import { useState } from "react";
 interface RegisterStep3Props{
     CompletedRegister: () => void,
     BackRegisterStep2: () => void,
-    // setPassword: (password: string) => void,
+    setPassword: (password: string) => void,
 }
 
 export function RegisterStep3({
     CompletedRegister,
     BackRegisterStep2,
+    setPassword,
 }:RegisterStep3Props){
 
     const [ passwordLocal, setPasswordLocal ] = useState('');
     const [ confirmPassword, setConfirmPassword ] = useState('');
 
     const [ egualsPassword, setEgualsPassword ] = useState<boolean | undefined>(undefined);
-    const [ passwordChecked, setPasswordChecked ] = useState(false);
 
     const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setPasswordLocal(event.target.value);
-        setPasswordChecked(false);
-        setEgualsPassword(undefined);
     };
 
     const handleConfirmPasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setConfirmPassword(event.target.value);
-        setPasswordChecked(false);
-        setEgualsPassword(undefined)
     };
 
     const handleBlur = () => {
         if(passwordLocal !== '' && confirmPassword !== ''){
-            setPasswordChecked(true)
             setEgualsPassword(passwordLocal === confirmPassword)
+
+            if(passwordLocal === confirmPassword){
+                setPassword(passwordLocal)
+            }
         }
     }
 
@@ -72,18 +71,21 @@ export function RegisterStep3({
                                     onChange={handleConfirmPasswordChange}
                                     onBlur={handleBlur}
                                 />
+
+                                <div className="flex justify-center items-center">
+                                    {egualsPassword !== undefined &&
+                                        !egualsPassword? (
+                                            <span className='text-red-700 font-sans font-medium'>
+                                                *a senha esta incorreta
+                                            </span> 
+                                        ) : (
+                                            <span className='text-transparent font-sans font-medium'>
+                                                a senha foi aprovada
+                                            </span> 
+                                        )
+                                    }
+                                </div>
                                 
-                                {passwordChecked && egualsPassword !== undefined &&
-                                    egualsPassword? (
-                                        <span className='text-green-700 font-sans font-medium'>
-                                            senha aprovada
-                                        </span> 
-                                    ) : (
-                                        <span className='text-red-700 font-sans font-medium'>
-                                            *a senha esta incorreta
-                                        </span> 
-                                    )
-                                }
 
 
                         </div>
