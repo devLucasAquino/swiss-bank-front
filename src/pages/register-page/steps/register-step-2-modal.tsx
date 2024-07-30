@@ -18,11 +18,21 @@ interface Adress{
 interface RegisterStep2Props{
     FilledRegisterStep2: () => void,
     BackRegisterStep1: () => void,
+    setCep: (cep: string) => void,
+    setCity: (city: string) => void,
+    setUf: (uf: string) => void,
+    setLogradouro: (logradouro: string) => void,
+    setBairro: (bairro: string) => void,
 }
 
 export function RegisterStep2({
     FilledRegisterStep2,
     BackRegisterStep1,
+    setCep,
+    setCity,
+    setUf,
+    setLogradouro,
+    setBairro,
 }:RegisterStep2Props){
 
 
@@ -30,8 +40,18 @@ export function RegisterStep2({
     const [ adress, setAdress ] = useState<Adress | undefined>();
 
     const handleBlur = () => {
-        axios.get(`https://viacep.com.br/ws/${inputValue}/json/`).then(
-            response => {setAdress(response.data)}
+        axios.get(`https://viacep.com.br/ws/${inputValue}/json/`)
+        .then(
+            response => {
+                if(response.data){
+                    setAdress(response.data);
+                    setCep(response.data.cep);
+                    setCity(response.data.localidade);
+                    setUf(response.data.uf);
+                    setBairro(response.data.bairro);
+                    setLogradouro(response.data.logradouro);
+                }
+            }
         )
     };
 

@@ -30,6 +30,7 @@ export function RegisterPage(){
     const [ cep, setCep ] = useState('');
     const [ city, setCity ] = useState('');
     const [ uf, setUf ] = useState('');
+    const [ bairro, setBairro ] = useState('');
     const [ logradouro, setLogradouro ] = useState('');
 
     // Estados para armazenar dados do cadastro step 3
@@ -51,6 +52,15 @@ export function RegisterPage(){
 
     function FilledRegisterStep2(){
         setFilledRegisterStep1(false);
+
+        console.log(
+            `cep: ${cep}\n`,
+            `cidade: ${city}\n`,
+            `uf: ${uf}\n`,
+            `logradouro: ${logradouro}\n`,
+            `bairro: ${bairro}\n`,
+        )
+
         setFilledRegisterStep2(true);
     }
 
@@ -93,6 +103,12 @@ export function RegisterPage(){
                 <RegisterStep2
                     FilledRegisterStep2={FilledRegisterStep2}
                     BackRegisterStep1={BackRegisterStep1}
+
+                    setCep={setCep}
+                    setCity={setCity}
+                    setUf={setUf}
+                    setBairro={setBairro}
+                    setLogradouro={setLogradouro}
                 />
             )}
 
