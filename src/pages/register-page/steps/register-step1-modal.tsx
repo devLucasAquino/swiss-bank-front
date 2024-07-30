@@ -1,9 +1,10 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { parseISO } from 'date-fns';
 
 import { UserInput } from "../../../components/user-input";
 import { BackButton } from "../../../components/back-button";
 import { PrimaryButton } from "../../../components/primary-button";
-import { useState } from "react";
 
 interface RegisterStep1Props{
     FilledRegisterStep1: () => void,
@@ -34,9 +35,8 @@ export function RegisterStep1({
         const dateBornString = event.target.value;
         setInputValueDateBorn(dateBornString);
 
-        const dateBorn = new Date(dateBornString);
-        
-        setDateBorn(dateBorn);
+        const dateBorn = parseISO(dateBornString);
+        setDateBorn(dateBorn)
         
     }
 

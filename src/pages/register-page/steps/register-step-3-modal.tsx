@@ -6,6 +6,7 @@ import { useState } from "react";
 interface RegisterStep3Props{
     CompletedRegister: () => void,
     BackRegisterStep2: () => void,
+    // setPassword: (password: string) => void,
 }
 
 export function RegisterStep3({
@@ -13,9 +14,30 @@ export function RegisterStep3({
     BackRegisterStep2,
 }:RegisterStep3Props){
 
-    const [ password, setPassword ] = useState('');
+    const [ passwordLocal, setPasswordLocal ] = useState('');
     const [ confirmPassword, setConfirmPassword ] = useState('');
 
+    const [ egualsPassword, setEgualsPassword ] = useState<boolean | undefined>(undefined);
+    const [ passwordChecked, setPasswordChecked ] = useState(false);
+
+    const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setPasswordLocal(event.target.value);
+        setPasswordChecked(false);
+        setEgualsPassword(undefined);
+    };
+
+    const handleConfirmPasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setConfirmPassword(event.target.value);
+        setPasswordChecked(false);
+        setEgualsPassword(undefined)
+    };
+
+    const handleBlur = () => {
+        if(passwordLocal !== '' && confirmPassword !== ''){
+            setPasswordChecked(true)
+            setEgualsPassword(passwordLocal === confirmPassword)
+        }
+    }
 
     return(  
         <form className='w-full flex justify-center items-center'>
@@ -35,24 +57,28 @@ export function RegisterStep3({
                                     title="Crie sua senha"
                                     subtitle="Crie sua senha"
                                     type="password"
-                                    onChange={(event) => setPassword(event.target.value)}
+                                    onChange={handlePasswordChange}
                                 />
 
                                 <UserInput 
                                     title="Confirme sua senha"
                                     subtitle="Confirme sua senha"
                                     type="password"
-                                    onChange={(event) => setConfirmPassword(event.target.value)}
+                                    onChange={handleConfirmPasswordChange}
+                                    onBlur={handleBlur}
                                 />
-                                { password !== confirmPassword ? (
-                                    <div>
-                                        <h2>as senhas estão diferentes</h2>
-                                    </div>
-                                ) : (
-                                    <div>
-                                        <h2>aprovado</h2>
-                                    </div>
-                                ) }
+                                
+                                {passwordChecked && egualsPassword !== undefined &&
+                                    egualsPassword? (
+                                        <span className='text-green-700 font-sans font-medium'>
+                                            senha aprovada
+                                        </span> 
+                                    ) : (
+                                        <span className='text-red-700 font-sans font-medium'>
+                                            *a senha esta incorreta
+                                        </span> 
+                                    )
+                                }
 
 
                         </div>
