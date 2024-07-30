@@ -1,4 +1,3 @@
-import { ChevronLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import { UserInput } from "../../../components/user-input";
