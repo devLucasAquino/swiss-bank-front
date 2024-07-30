@@ -8,23 +8,51 @@ import { useState } from "react";
 interface RegisterStep1Props{
     FilledRegisterStep1: () => void,
     setName: (name: string) => void,
+    setDateBorn: (dateBorn: Date) => void;
+    setEmail: (email: string) => void;
+    setCpf: (cpf: string) => void;
+    setPhone: (phone: string) => void;
 }
 
 export function RegisterStep1({
     FilledRegisterStep1,
     setName,
+    setDateBorn,
+    setEmail,
+    setCpf,
+    setPhone
 }:RegisterStep1Props){
 
-    const [ aa, setAa ] = useState('');
-
     const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const name = event.target.value.trim()
-        if(name.length !== 0 && name.length !== 1){
-            setName(name);
-        }else{
-            setAa('Por favor insira um nome')
-        }
-        return
+        const name = event.target.value;
+        setName(name);
+    }
+
+    const [inputValueDateBorn, setInputValueDateBorn] = useState('');
+
+    const handleDateBornChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const dateBornString = event.target.value;
+        setInputValueDateBorn(dateBornString);
+
+        const dateBorn = new Date(dateBornString);
+        
+        setDateBorn(dateBorn);
+        
+    }
+
+    const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const email = event.target.value;
+        setEmail(email);
+    }
+
+    const handleCpfChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const cpf = event.target.value;
+        setCpf(cpf);
+    }
+
+    const handlePhoneChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const phone = event.target.value.trim();
+        setPhone(phone);
     }
 
 
@@ -50,30 +78,36 @@ export function RegisterStep1({
                                         title="Nome Completo" 
                                         subtitle='Insira seu nome'
                                         type="text"
+                                        onChange={handleNameChange}
                                     />
 
                                     <UserInput 
                                         title="Data de Nascimento" 
                                         subtitle="dd/mm/aaaa"
                                         type="date"
+                                        onChange={handleDateBornChange}
+                                        value={inputValueDateBorn}
                                     />
 
                                     <UserInput 
                                         title="E-mail" 
                                         subtitle="Insira seu e-mail"
                                         type="email"
+                                        onChange={handleEmailChange}
                                     />
 
                                     <UserInput 
                                         title="CPF" 
                                         subtitle="Insira seu CPF"
                                         type="text"
+                                        onChange={handleCpfChange}
                                     />
 
                                     <UserInput 
                                         title="Telefone" 
                                         subtitle="Insira seu telefone"
                                         type="text"
+                                        onChange={handlePhoneChange}
                                     />
 
                             </div>

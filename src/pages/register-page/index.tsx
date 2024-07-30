@@ -21,7 +21,7 @@ export function RegisterPage(){
 
     // Estados para armazenar dados do cadastro step 1
     const [ name, setName ] = useState('');
-    const [ dateBorn, setDateBorn ] = useState('');
+    const [ dateBorn, setDateBorn ] = useState<Date>();
     const [ email, setEmail ] = useState('');
     const [ cpf, setCpf ] = useState('');
     const [ phone, setPhone ] = useState('');
@@ -39,6 +39,13 @@ export function RegisterPage(){
     // Funções para avançar entre os estados de registro
     function FilledRegisterStep1(){
         setRegisterStep1(false);
+        console.log(
+            `name: ${name}\n`,
+            `dateBorn: ${dateBorn}\n`,
+            `email: ${email}\n`,
+            `cpf: ${cpf}\n`,
+            `phone: ${phone}\n`,
+        )
         setFilledRegisterStep1(true);
     }
 
@@ -72,7 +79,13 @@ export function RegisterPage(){
 
             {registerStep1 && (
                 <RegisterStep1 
-                    FilledRegisterStep1={FilledRegisterStep1} 
+                    FilledRegisterStep1={FilledRegisterStep1}
+
+                    setName={setName}
+                    setDateBorn={setDateBorn}
+                    setEmail={setEmail}
+                    setCpf={setCpf}
+                    setPhone={setPhone}
                 />
             )}
 
