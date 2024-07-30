@@ -55,11 +55,16 @@ export function RegisterStep1({
         setPhone(phone);
     }
 
+    const handleSubmit = (event: React.FormEvent) => {
+        event.preventDefault();
+        FilledRegisterStep1(); // Chama a função passada como prop
+    };
+
 
 
 
     return(
-                    <form className='w-full flex justify-center items-center'>
+                    <form onSubmit={handleSubmit} className='w-full flex justify-center items-center'>
                         <div className='flex flex-col space-y-10 bg-white rounded-2xl w-[640px] px-9 py-14'>
 
                             <div className="space-y-6">
@@ -112,7 +117,7 @@ export function RegisterStep1({
 
                             </div>
 
-                            <PrimaryButton onClick={FilledRegisterStep1}>Avançar</PrimaryButton>
+                            <PrimaryButton type="submit">Avançar</PrimaryButton>
 
                         </div>
                     </form>

@@ -39,8 +39,13 @@ export function RegisterStep3({
         }
     }
 
+    const handleSubmit = (event: React.FormEvent) => {
+        event.preventDefault();
+        CompletedRegister(); // Chama a função passada como prop
+    };
+
     return(  
-        <form className='w-full flex justify-center items-center'>
+        <form onSubmit={handleSubmit} className='w-full flex justify-center items-center'>
                     <div className='flex flex-col space-y-10 bg-white rounded-2xl w-[640px] px-9 py-14'>
 
                         <div className="space-y-6"> 
@@ -83,7 +88,7 @@ export function RegisterStep3({
 
                         </div>
 
-                        <PrimaryButton onClick={CompletedRegister} >Cadastrar</PrimaryButton>
+                        <PrimaryButton type="submit" >Cadastrar</PrimaryButton>
 
                     </div>
         </form>

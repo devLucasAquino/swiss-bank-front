@@ -55,8 +55,15 @@ export function RegisterStep2({
         )
     };
 
+    const handleSubmit = (event: React.FormEvent) => {
+        event.preventDefault();
+        FilledRegisterStep2(); // Chama a função passada como prop
+    };
+
+    
+
     return(
-        <form className='w-full flex justify-center items-center'>
+        <form onSubmit={handleSubmit} className='w-full flex justify-center items-center'>
                 <div className='flex flex-col space-y-10 bg-white rounded-2xl w-[640px] px-9 py-14'>
 
                     <div className="space-y-6"> 
@@ -85,9 +92,10 @@ export function RegisterStep2({
                                 
                                     <h2 className='font-bold text-lg font-sans'>Cidade</h2>
                                     <input className='rounded-md border-2 border-zinc-400 p-3 w-auto focus:outline-red-600 focus:border-white'
-                                        value={adress?.localidade}
+                                        value={adress?.localidade || ''}
+                                        readOnly
                                         type="text"
-                                        placeholder='dd/mm/aaaa'    
+                                        placeholder='Insira sua cidade'    
                                     />
                                 </div>
 
@@ -96,8 +104,10 @@ export function RegisterStep2({
                                     <div className="flex items-center justify-between border-2 border-zinc-400 w-40 h-11 rounded-md py-6 px-5 focus:outline-red-600 focus:border-white">
                                         
                                         <input className=' p-3 w-auto'
-                                            value={adress?.uf}
+                                            value={`${adress?.uf || ''}`}
+                                            readOnly
                                             type="text"
+                                            
                                         />
 
                                         <ChevronDown className="size-14 text-zinc-600"/>
@@ -109,14 +119,15 @@ export function RegisterStep2({
                             <UserInput
                                 title="Logradouro"
                                 subtitle="Insira seu logradouro"
-                                value={`${adress?.logradouro}, ${adress?.bairro}`}
+                                value={`${adress?.logradouro || ''}, ${adress?.bairro || ''}`}
+                                readOnly
                             />
 
 
 
                     </div>
 
-                    <PrimaryButton onClick={FilledRegisterStep2} >Avançar</PrimaryButton>
+                    <PrimaryButton type="submit" >Avançar</PrimaryButton>
 
                  </div>
              </form>
