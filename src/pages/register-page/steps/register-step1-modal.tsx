@@ -3,14 +3,33 @@ import { Link } from "react-router-dom";
 import { UserInput } from "../../../components/user-input";
 import { BackButton } from "../../../components/back-button";
 import { PrimaryButton } from "../../../components/primary-button";
+import { useState } from "react";
 
 interface RegisterStep1Props{
     FilledRegisterStep1: () => void,
+    setName: (name: string) => void,
 }
 
 export function RegisterStep1({
     FilledRegisterStep1,
+    setName,
 }:RegisterStep1Props){
+
+    const [ aa, setAa ] = useState('');
+
+    const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const name = event.target.value.trim()
+        if(name.length !== 0 && name.length !== 1){
+            setName(name);
+        }else{
+            setAa('Por favor insira um nome')
+        }
+        return
+    }
+
+
+
+
     return(
                     <form className='w-full flex justify-center items-center'>
                         <div className='flex flex-col space-y-10 bg-white rounded-2xl w-[640px] px-9 py-14'>
@@ -29,7 +48,7 @@ export function RegisterStep1({
                                 
                                     <UserInput 
                                         title="Nome Completo" 
-                                        subtitle="Insira seu nome completo"
+                                        subtitle='Insira seu nome'
                                         type="text"
                                     />
 

@@ -18,6 +18,24 @@ export function RegisterPage(){
     const [ filledRegisterStep2, setFilledRegisterStep2 ] = useState(false);
     const [ completedRegister, setCompletedRegister ] = useState(false);
 
+
+    // Estados para armazenar dados do cadastro step 1
+    const [ name, setName ] = useState('');
+    const [ dateBorn, setDateBorn ] = useState('');
+    const [ email, setEmail ] = useState('');
+    const [ cpf, setCpf ] = useState('');
+    const [ phone, setPhone ] = useState('');
+
+    // Estados para armazenar dados do cadastro step 2
+    const [ cep, setCep ] = useState('');
+    const [ city, setCity ] = useState('');
+    const [ uf, setUf ] = useState('');
+    const [ logradouro, setLogradouro ] = useState('');
+
+    // Estados para armazenar dados do cadastro step 3
+    const [ password, setPassword ] = useState('');
+
+
     // Funções para avançar entre os estados de registro
     function FilledRegisterStep1(){
         setRegisterStep1(false);
