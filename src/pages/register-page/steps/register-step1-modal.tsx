@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 import { UserInput } from "../../../components/user-input";
 import { BackButton } from "../../../components/back-button";
+import { PrimaryButton } from "../../../components/primary-button";
 
 interface RegisterStep1Props{
     FilledRegisterStep1: () => void,
@@ -29,40 +30,36 @@ export function RegisterStep1({
                                     <UserInput 
                                         title="Nome Completo" 
                                         subtitle="Insira seu nome completo"
-                                        inputType="text"
+                                        type="text"
                                     />
 
                                     <UserInput 
                                         title="Data de Nascimento" 
                                         subtitle="dd/mm/aaaa"
-                                        inputType="text"
+                                        type="date"
                                     />
 
                                     <UserInput 
                                         title="E-mail" 
                                         subtitle="Insira seu e-mail"
-                                        inputType="e-mail"
+                                        type="email"
                                     />
 
                                     <UserInput 
                                         title="CPF" 
                                         subtitle="Insira seu CPF"
-                                        inputType="text"
+                                        type="text"
                                     />
 
                                     <UserInput 
                                         title="Telefone" 
                                         subtitle="Insira seu telefone"
-                                        inputType="text"
+                                        type="text"
                                     />
 
                             </div>
 
-                            <div className='flex justify-center'>
-                                <button onClick={FilledRegisterStep1} className='bg-red-600 py-2 px-20 rounded-xl hover:bg-red-700'>
-                                    <span className='text-zinc-50 font-bold text-lg'>Avançar</span>
-                                </button>
-                            </div>
+                            <PrimaryButton onClick={FilledRegisterStep1}>Avançar</PrimaryButton>
 
                         </div>
                     </form>

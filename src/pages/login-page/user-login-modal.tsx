@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { PrimaryButton } from "../../components/primary-button";
 
 interface UserLoginProps{
     OpenPasswordLogin: () => void,
@@ -34,11 +35,7 @@ export function UserLogin({
                                 </div>
                             </div>
 
-                            <div className='flex justify-center'>
-                                <button onClick={OpenPasswordLogin} className='bg-red-600 py-2 px-20 rounded-xl hover:bg-red-700'>
-                                    <span className='text-zinc-50 font-bold text-lg'>Avançar</span>
-                                </button>
-                            </div>
+                            <PrimaryButton onClick={OpenPasswordLogin}>Avançar</PrimaryButton>
                         </form>
 
                         

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { BackButton } from "../../components/back-button";
+import { PrimaryButton } from "../../components/primary-button";
 
 export function PasswordLogin(){
     return(
@@ -29,13 +30,11 @@ export function PasswordLogin(){
                                  </div>
                              </div>
  
-                             <div className='flex justify-center'>
-                                <Link to={`/home`}>
-                                    <button className='bg-red-600 py-2 px-20 rounded-xl hover:bg-red-700'>
-                                        <span className='text-zinc-50 font-bold text-lg'>Avançar</span>
-                                    </button>
-                                </Link>
-                             </div>
+                            
+                            <Link to={`/home`}>
+                                <PrimaryButton>Avançar</PrimaryButton>
+                            </Link>
+                            
                          </form>
  
                          

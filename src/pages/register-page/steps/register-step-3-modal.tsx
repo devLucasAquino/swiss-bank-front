@@ -1,6 +1,7 @@
 import { ChevronLeft } from "lucide-react";
 import { UserInput } from "../../../components/user-input";
 import { BackButton } from "../../../components/back-button";
+import { PrimaryButton } from "../../../components/primary-button";
 
 interface RegisterStep3Props{
     CompletedRegister: () => void,
@@ -28,23 +29,19 @@ export function RegisterStep3({
                                 <UserInput 
                                     title="Crie sua senha"
                                     subtitle="Crie sua senha"
-                                    inputType="password"
+                                    type="password"
                                 />
 
                                 <UserInput 
                                     title="Confirme sua senha"
                                     subtitle="Confirme sua senha"
-                                    inputType="password"
+                                    type="password"
                                 />
 
 
                         </div>
 
-                        <div className='flex justify-center'>
-                            <button onClick={CompletedRegister} className='bg-red-600 py-2 px-20 rounded-xl hover:bg-red-700'>
-                                <span className='text-zinc-50 font-bold text-lg'>Cadastrar</span>
-                            </button>
-                        </div>
+                        <PrimaryButton onClick={CompletedRegister} >Cadastrar</PrimaryButton>
 
                     </div>
         </form>

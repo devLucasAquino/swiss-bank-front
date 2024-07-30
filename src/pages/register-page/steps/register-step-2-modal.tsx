@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import { UserInput } from "../../../components/user-input";
 import { BackButton } from "../../../components/back-button";
+import { PrimaryButton } from "../../../components/primary-button";
 
 
 interface Adress{
@@ -46,22 +47,22 @@ export function RegisterStep2({
                         </div>
                     </div>
 
-                     <div className='space-y-3'>
+                    <div className='space-y-3'>
                          
-                             <div className='flex flex-col space-y-2'>
-                                 <h2 className='font-bold text-lg font-sans'>CEP</h2>
-                                 <input className='rounded-md border-2 border-zinc-400 p-3 w-auto focus:outline-red-600 focus:border-white'
-                                    type="text"
-                                    placeholder='Insira seu CEP'
-                                    value={inputValue}
-                                    onChange={(e) => setInputValue(e.target.value)}
-                                    onBlur={handleBlur}
-                                 />
-                             </div>
+
+                            <UserInput 
+                                title="CEP"
+                                subtitle="Insira seu CEP"
+                                value={inputValue}
+                                onChange={(e) => setInputValue(e.target.value)}
+                                onBlur={handleBlur}
+
+                            />
 
                             <div className="flex items-center gap-5 ">
 
                                 <div className='flex flex-col space-y-2 flex-1'>
+                                
                                     <h2 className='font-bold text-lg font-sans'>Cidade</h2>
                                     <input className='rounded-md border-2 border-zinc-400 p-3 w-auto focus:outline-red-600 focus:border-white'
                                         value={adress?.localidade}
@@ -85,23 +86,17 @@ export function RegisterStep2({
 
                             </div>
 
-                             <div className='flex flex-col space-y-2'>
-                                 <h2 className='font-bold text-lg font-sans'>Logradouro</h2>
-                                 <input className='rounded-md border-2 border-zinc-400 p-3 w-auto focus:outline-red-600 focus:border-white'
-                                     type="text"
-                                     placeholder='Insira seu logradouro'
-                                     value={`${adress?.logradouro}, ${adress?.bairro}`}    
-                                 />
-                             </div>
+                            <UserInput
+                                title="Logradouro"
+                                subtitle="Insira seu logradouro"
+                                value={`${adress?.logradouro}, ${adress?.bairro}`}
+                            />
 
 
-                     </div>
 
-                     <div className='flex justify-center'>
-                         <button onClick={FilledRegisterStep2} className='bg-red-600 py-2 px-20 rounded-xl hover:bg-red-700'>
-                             <span className='text-zinc-50 font-bold text-lg'>Avançar</span>
-                         </button>
-                     </div>
+                    </div>
+
+                    <PrimaryButton onClick={FilledRegisterStep2} >Avançar</PrimaryButton>
 
                  </div>
              </form>
