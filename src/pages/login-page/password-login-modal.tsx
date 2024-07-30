@@ -1,16 +1,14 @@
-import { ChevronLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import { BackButton } from "../../components/back-button";
 
 export function PasswordLogin(){
     return(
         <div className='w-full flex justify-center items-center flex-1'>
                     <div className='flex justify-center bg-white items-center p-9 rounded-2xl w-[640px]'>
                        <div className='flex flex-col space-y-9 w-full h-full'>
-                       <button className='size-12 bg-red-700 rounded-full justify-start'>
-                                    <div className='flex justify-center'>
-                                        <ChevronLeft className='size-8 text-zinc-50'/>
-                                    </div>
-                        </button>
+                        <Link to={`/`}>
+                            <BackButton />
+                        </Link>
                          <div className='space-y-1'>
                                 <h3 className='text-2xl font-bold font-sans'>Digite sua senha</h3>
                                 <p className='font-medium text-zinc-600'>nomeusuario</p>

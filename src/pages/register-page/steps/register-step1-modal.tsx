@@ -2,6 +2,7 @@ import { ChevronLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import { UserInput } from "../../../components/user-input";
+import { BackButton } from "../../../components/back-button";
 
 interface RegisterStep1Props{
     FilledRegisterStep1: () => void,
@@ -16,11 +17,7 @@ export function RegisterStep1({
 
                             <div className="space-y-6">
                                 <Link to={`/`}>
-                                    <button className='size-12 bg-red-700 rounded-full justify-start'>
-                                        <div className='flex justify-center'>
-                                            <ChevronLeft className='size-8 text-zinc-50'/>
-                                        </div>
-                                    </button>
+                                    <BackButton/>
                                 </Link>
                                 <div>
                                     <h3 className='text-3xl font-bold font-sans'>Cadastre-se</h3>

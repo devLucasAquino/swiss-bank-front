@@ -23,7 +23,7 @@ export function UserInput({
     return(
         <div className='flex flex-col space-y-2'>
             <h2 className={userTitleVatiants()}>{title}</h2>
-            <input {...props} className={userInputVariants()}
+            <input className={userInputVariants()}
                 placeholder={subtitle}
                 type={inputType}    
             />

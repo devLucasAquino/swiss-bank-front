@@ -1,4 +1,6 @@
 import { ChevronLeft } from "lucide-react";
+import { UserInput } from "../../../components/user-input";
+import { BackButton } from "../../../components/back-button";
 
 interface RegisterStep3Props{
     CompletedRegister: () => void,
@@ -14,11 +16,7 @@ export function RegisterStep3({
                     <div className='flex flex-col space-y-10 bg-white rounded-2xl w-[640px] px-9 py-14'>
 
                         <div className="space-y-6"> 
-                            <button onClick={BackRegisterStep2} className='size-12 bg-red-700 rounded-full justify-start'>
-                                <div className='flex justify-center'>
-                                <ChevronLeft className='size-8 text-zinc-50'/>
-                                </div>
-                            </button>
+                            <BackButton onClick={BackRegisterStep2} />
                             <div>
                                 <h3 className='text-3xl font-bold font-sans'>Cadastre-se</h3>
                                 <p className='font-medium text-zinc-600'>Todos os campos são obrigatórios.</p>
@@ -27,21 +25,17 @@ export function RegisterStep3({
 
                         <div className='space-y-3'>
                             
-                                <div className='flex flex-col space-y-2'>
-                                    <h2 className='font-bold text-lg font-sans'>Crie uma senha</h2>
-                                    <input className='rounded-md border-2 border-zinc-400 p-3 w-auto'
-                                        type="password"
-                                        placeholder='Crie uma senha'    
-                                    />
-                                </div>
+                                <UserInput 
+                                    title="Crie sua senha"
+                                    subtitle="Crie sua senha"
+                                    inputType="password"
+                                />
 
-                                <div className='flex flex-col space-y-2'>
-                                    <h2 className='font-bold text-lg font-sans'>Confirme sua senha</h2>
-                                    <input className='rounded-md border-2 border-zinc-400 p-3 w-auto'
-                                        type="password"
-                                        placeholder='Confirme sua senha'    
-                                    />
-                                </div>
+                                <UserInput 
+                                    title="Confirme sua senha"
+                                    subtitle="Confirme sua senha"
+                                    inputType="password"
+                                />
 
 
                         </div>
