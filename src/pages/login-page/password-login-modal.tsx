@@ -2,13 +2,7 @@ import { Link } from "react-router-dom";
 import { BackButton } from "../../components/back-button";
 import { PrimaryButton } from "../../components/primary-button";
 
-interface PasswordLoginProps{
-    handleSignIn: (e: React.FormEvent) => void;
-}
-
-export function PasswordLogin({
-    handleSignIn,
-}:PasswordLoginProps){
+export function PasswordLogin(){
     return(
         <div className='w-full flex justify-center items-center flex-1'>
                     <div className='flex justify-center bg-white items-center p-9 rounded-2xl w-[640px]'>
@@ -38,7 +32,7 @@ export function PasswordLogin({
  
                             
                             <Link to={`/home`}>
-                                <PrimaryButton onClick={handleSignIn} >Avançar</PrimaryButton>
+                                <PrimaryButton  >Avançar</PrimaryButton>
                             </Link>
                             
                          </form>
