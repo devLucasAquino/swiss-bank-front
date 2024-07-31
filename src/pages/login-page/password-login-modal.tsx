@@ -27,7 +27,7 @@ export function PasswordLogin({
                              <div className='flex flex-col space-y-4'>
                                  <div className='flex flex-col'>
                                      <input className='rounded-md border-2 border-zinc-400 p-3 w-auto focus:outline-red-600 focus:border-white'
-                                         type="text"
+                                         type="password"
                                          placeholder='Digite sua senha'
                                          onChange={(e) => setPassword(e.target.value)} 
                                      />
