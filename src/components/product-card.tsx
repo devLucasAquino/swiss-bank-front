@@ -17,7 +17,7 @@ export function ProductCard({
         <div className="p-9">
 
             <div className="flex justify-center items-end">
-                <img src={src} className="size-96" alt={alt}/>
+                <img src={src} alt={alt}/>
 
                 <div className="bg-black w-72 h-auto absolute rounded-xl p-3 space-y-3">
                     <div>

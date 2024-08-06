@@ -3,6 +3,7 @@ import { HomeHeader } from "../../components/home-header"
 
 import produto1 from "../../assets/images/prod1.png"
 import produto2 from "../../assets/images/prod2.png"
+import produto3 from "../../assets/images/prod3.png"
 import { ProductCard } from "../../components/product-card"
 
 export function HomePage(){
@@ -54,7 +55,7 @@ export function HomePage(){
                         <h1 className="text-3xl font-bold">Destaques - Loja</h1>
                     </div>
 
-                    <div className="flex flex-row">
+                    <div className="flex flex-row justify-center gap-11">
                         
                         <ProductCard 
                             src={produto1}
@@ -87,6 +88,33 @@ export function HomePage(){
 
                     <div className="w-full h-auto flex justify-start">
                         <h1 className="text-3xl font-bold">Destaques - Biblioteca</h1>
+                    </div>
+
+                    <div className="flex flex-row justify-center gap-11">
+
+                        <ProductCard 
+                            src={produto3}
+                            alt="produto3"
+                            title="Livro 1"
+                            description="livro 1"
+                            value={30}
+                        />
+                        <ProductCard 
+                            src={produto3}
+                            alt="produto3"
+                            title="Livro 1"
+                            description="livro 1"
+                            value={20}
+                        />
+                        <ProductCard 
+                            src={produto3}
+                            alt="produto3"
+                            title="Livro 1"
+                            description="livro 1"
+                            value={50}
+                        />
+
+
                     </div>
 
                 </div>
