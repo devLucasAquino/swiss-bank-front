@@ -1,5 +1,11 @@
+import { HomeHeader } from "../../components/home-header";
+
 export function FavoritesPage(){
     return(
-        <h1>Hello World Favorites</h1>
+        <div>
+
+            <HomeHeader />
+
+        </div>
     )
 }

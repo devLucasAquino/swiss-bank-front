@@ -1,5 +1,11 @@
+import { HomeHeader } from "../../components/home-header";
+
 export function CanteenPage(){
     return(
-        <h1>Hello World Canteen</h1>
+        <div>
+
+            <HomeHeader />
+
+        </div>
     )
 }

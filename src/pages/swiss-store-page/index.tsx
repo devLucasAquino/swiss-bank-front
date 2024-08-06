@@ -1,4 +1,4 @@
-import { ArrowDownWideNarrow, Filter, Heart } from "lucide-react";
+import { ArrowDownWideNarrow, Filter } from "lucide-react";
 import { HomeHeader } from "../../components/home-header";
 
 import camisa1 from "../../assets/images/prod1.png"

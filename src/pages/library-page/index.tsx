@@ -1,5 +1,11 @@
+import { HomeHeader } from "../../components/home-header";
+
 export function LibraryPage(){
     return(
-        <h1>Hello World library</h1>
+        <div>
+
+            <HomeHeader />
+
+        </div>
     )
 }
