@@ -2,15 +2,7 @@ import { Link } from "react-router-dom";
 import { BackButton } from "../../components/back-button";
 import { PrimaryButton } from "../../components/primary-button";
 
-interface PasswordLoginProps{
-    setPassword: (password: string) => void,
-    handleSignIn: (e: React.FormEvent) => void,
-}
-
-export function PasswordLogin({
-    setPassword,
-    handleSignIn,
-}:PasswordLoginProps){
+export function PasswordLogin(){
     return(
         <div className='w-full flex justify-center items-center flex-1'>
                     <div className='flex justify-center bg-white items-center p-9 rounded-2xl w-[640px]'>
@@ -29,7 +21,6 @@ export function PasswordLogin({
                                      <input className='rounded-md border-2 border-zinc-400 p-3 w-auto focus:outline-red-600 focus:border-white'
                                          type="password"
                                          placeholder='Digite sua senha'
-                                         onChange={(e) => setPassword(e.target.value)} 
                                      />
                                      <button>
                                         <span className='text-zinc-500 font-sans font-medium'>
@@ -38,10 +29,9 @@ export function PasswordLogin({
                                      </button>
                                  </div>
                              </div>
- 
                             
                             <Link to={`/home`}>
-                                <PrimaryButton onClick={handleSignIn} >Avançar</PrimaryButton>
+                                <PrimaryButton>Avançar</PrimaryButton>
                             </Link>
                             
                          </form>

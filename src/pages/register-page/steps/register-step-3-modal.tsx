@@ -7,14 +7,12 @@ interface RegisterStep3Props{
     CompletedRegister: () => void,
     BackRegisterStep2: () => void,
     setPassword: (password: string) => void,
-    handleSignOut: (e: React.FormEvent) => void,
 }
 
 export function RegisterStep3({
     CompletedRegister,
     BackRegisterStep2,
     setPassword,
-    handleSignOut,
 }:RegisterStep3Props){
 
     const [ passwordLocal, setPasswordLocal ] = useState('');
@@ -42,7 +40,6 @@ export function RegisterStep3({
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
-        handleSignOut(event);
         CompletedRegister(); // Chama a função passada como prop
     };
 

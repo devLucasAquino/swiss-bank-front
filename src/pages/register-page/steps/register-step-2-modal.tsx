@@ -119,7 +119,7 @@ export function RegisterStep2({
                             <UserInput
                                 title="Logradouro"
                                 subtitle="Insira seu logradouro"
-                                value={`${adress?.logradouro || ''}, ${adress?.bairro || ''}`}
+                                value={`${adress?.logradouro || ''} ${adress?.bairro || ''}`}
                                 readOnly
                             />
 

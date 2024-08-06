@@ -6,10 +6,6 @@ import { RegisterStep3 } from "./steps/register-step-3-modal";
 import { CompleteRegister } from "./steps/complete-register-moda";
 import { LoginAndRegisterHeader } from "../../components/login-and-register-header";
 import { LoginAndRegisterFooter } from "../../components/login-and-register-footer";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { auth } from "../../services/firebase-config";
-
-
 
 export function RegisterPage(){
 
@@ -37,19 +33,6 @@ export function RegisterPage(){
 
     // Estados para armazenar dados do cadastro step 3
     const [ password, setPassword ] = useState('');
-
-    const [
-      createUserWithEmailAndPassword,
-    //   user,
-    //   loading,
-    //   error,
-    ] = useCreateUserWithEmailAndPassword(auth);
-
-    function handleSignOut(e: React.FormEvent){
-        e.preventDefault();
-        createUserWithEmailAndPassword(email, password);
-    }
-
 
     // Funções para avançar entre os estados de registro
     function FilledRegisterStep1(){
@@ -134,7 +117,7 @@ export function RegisterPage(){
 
                     setPassword={setPassword}
 
-                    handleSignOut={handleSignOut}
+
 
                 />
             )}

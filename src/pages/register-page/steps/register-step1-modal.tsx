@@ -64,8 +64,8 @@ export function RegisterStep1({
 
 
     return(
-                    <form onSubmit={handleSubmit} className='w-full flex justify-center items-center'>
-                        <div className='flex flex-col space-y-10 bg-white rounded-2xl w-[640px] px-9 py-14'>
+            <form onSubmit={handleSubmit} className='w-full flex justify-center items-center'>
+                <div className='flex flex-col space-y-10 bg-white rounded-2xl w-[640px] px-9 py-14'>
 
                             <div className="space-y-6">
                                 <Link to={`/`}>

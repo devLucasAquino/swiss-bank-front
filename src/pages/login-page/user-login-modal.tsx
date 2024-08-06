@@ -3,12 +3,10 @@ import { PrimaryButton } from "../../components/primary-button";
 
 interface UserLoginProps{
     OpenPasswordLogin: () => void,
-    setEmail: (email: string) => void,
 }
 
 export function UserLogin({
     OpenPasswordLogin,
-    setEmail,
 }:UserLoginProps){
     return(
         <div className='w-full flex justify-center items-center flex-1'>
@@ -26,7 +24,6 @@ export function UserLogin({
                                     <input className='rounded-md border-2 border-zinc-400 p-3 w-auto focus:outline-red-600 focus:border-white'
                                         type="text"
                                         placeholder='Insira seu e-mail'
-                                        onChange={(e) => setEmail(e.target.value)}    
                                     />
                                     <button>
                                         <Link to={'/register'} >
