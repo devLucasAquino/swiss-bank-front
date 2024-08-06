@@ -6,6 +6,7 @@ import produto2 from "../../assets/images/prod2.png"
 import produto3 from "../../assets/images/prod3.png"
 import produto4 from "../../assets/images/prod4.png"
 import { ProductCard } from "../../components/product-card"
+import { HomeFooter } from "../../components/home-footer"
 
 export function HomePage(){
     return(
@@ -159,7 +160,7 @@ export function HomePage(){
 
             </main>
 
-            
+            <HomeFooter />
 
         </div>
     )
