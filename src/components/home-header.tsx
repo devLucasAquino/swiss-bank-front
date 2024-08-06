@@ -1,5 +1,6 @@
 import { ChevronRight, Eye, Settings } from "lucide-react"
 import logo from "../assets/images/logotipo.png"
+import { Link } from "react-router-dom"
 
 export function HomeHeader(){
     return(
@@ -8,9 +9,21 @@ export function HomeHeader(){
                 <img className="h-28" src={logo} alt="logotipo SwissWallet" />
                 <div className="flex items-center p-10">
                     <nav className="flex space-x-7">
-                        <p className="text-zinc-100 text-2xl font-bold">Swiss Store</p>
-                        <p className="text-zinc-100 text-2xl font-bold">Biblioteca</p>
-                        <p className="text-zinc-100 text-2xl font-bold">Cantina</p>
+                        <Link to={'/swissstore'}>
+                            <button>
+                                <p className="text-zinc-100 text-2xl font-bold">Swiss Store</p>
+                            </button>
+                        </Link>
+                        <Link to={'/library'}>
+                            <button>
+                                <p className="text-zinc-100 text-2xl font-bold">Biblioteca</p>
+                            </button>
+                        </Link>
+                        <Link to={'/canteen'}>
+                            <button>
+                                <p className="text-zinc-100 text-2xl font-bold">Cantina</p>
+                            </button>
+                        </Link>
                         <Settings className="text-zinc-100 size-8" />
                     </nav>
                 </div>

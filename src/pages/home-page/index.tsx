@@ -7,6 +7,7 @@ import produto3 from "../../assets/images/prod3.png"
 import produto4 from "../../assets/images/prod4.png"
 import { ProductCard } from "../../components/product-card"
 import { HomeFooter } from "../../components/home-footer"
+import { Link } from "react-router-dom"
 
 export function HomePage(){
     return(
@@ -17,7 +18,7 @@ export function HomePage(){
                 <div className="flex items-center justify-between">
 
 
-                    <div className="w-[620px] h-32 space-y-3 p-5 rounded-xl bg-white shadow-xl">
+                    <div className="w-[550px] h-32 space-y-3 p-5 rounded-xl bg-white shadow-xl">
                         <div className="flex space-x-2 items-center">
                             <Heart className="size-7 font-bold "/>
                             <h2 className="text-2xl font-bold">AAPM</h2>
@@ -29,7 +30,7 @@ export function HomePage(){
 
 
 
-                    <div className="w-[620px] h-32 space-y-3 p-5 rounded-xl bg-white shadow-xl">
+                    <div className="w-[550px] h-32 space-y-3 p-5 rounded-xl bg-white shadow-xl">
 
                         <div className="flex space-x-2 items-center">
                             <Heart className="size-7 font-bold " />
@@ -39,9 +40,11 @@ export function HomePage(){
                             <p className="w-96 font-medium ml-10">
                                 acessar os favoritos
                             </p>
-                            <button>
-                                <ChevronRight />
-                            </button>
+                            <Link to={'/favorites'}>
+                                <button>
+                                    <ChevronRight />
+                                </button>
+                            </Link>
                         </div>
 
                     </div>
