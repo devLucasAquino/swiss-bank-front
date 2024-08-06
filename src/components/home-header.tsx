@@ -6,7 +6,9 @@ export function HomeHeader(){
     return(
         <header className="">
             <div className="flex p-6 justify-between bg-gradient-to-t from-red-900 to-red-600">
-                <img className="h-28" src={logo} alt="logotipo SwissWallet" />
+                <Link to={"/home"}>
+                    <img className="h-28" src={logo} alt="logotipo SwissWallet" />
+                </Link>
                 <div className="flex items-center p-10">
                     <nav className="flex space-x-7">
                         <Link to={'/swissstore'}>
