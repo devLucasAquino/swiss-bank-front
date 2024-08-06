@@ -1,5 +1,11 @@
+import { HomeHeader } from "../../components/home-header"
+
 export function HomePage(){
     return(
-        <h1>Hello HomePage</h1>
+        <div>
+            <HomeHeader />
+
+
+        </div>
     )
 }
