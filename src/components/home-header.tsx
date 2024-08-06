@@ -1,4 +1,4 @@
-import { Settings } from "lucide-react"
+import { ChevronRight, Eye, Settings } from "lucide-react"
 import logo from "../assets/images/logotipo.png"
 
 export function HomeHeader(){
@@ -20,14 +20,22 @@ export function HomeHeader(){
                 <div className="flex justify-between w-[600] p-5 space-x-60 rounded-xl bg-white shadow-xl">
 
                     <div>
-                        <h2>Saldo</h2>
-                        <p>Pontos *****</p>
+                        <h2 className="font-medium text-lg">Saldo</h2>
+                        <p className="font-bold text-2xl">Pontos *****</p>
                     </div>
 
-                    <div>
-                        <button>
-                            ver extrato 
-                        </button>
+                    <div className="flex flex-col space-y-2">
+                        <div className="flex items-center">
+                            <button>
+                                <div className="flex items-center">
+                                    <span className="font-medium">ver extrato</span>
+                                    <ChevronRight />
+                                </div>
+                            </button>
+                        </div>
+                        <div className="flex justify-end">
+                            <Eye />
+                        </div>
                     </div>
 
                 </div>

@@ -15,7 +15,7 @@ export function HomePage(){
                             <Heart className="size-7 font-bold "/>
                             <h2 className="text-2xl font-bold">AAPM</h2>
                         </div>
-                        <p className="w-96">
+                        <p className="w-96 font-medium">
                             apoie na gestão da escola no alcance de suas metas e promoção a integração escola-comunidade.
                         </p>
                     </div>
@@ -29,7 +29,7 @@ export function HomePage(){
                             <h2 className="text-2xl font-bold">Favoritos</h2>
                         </div>
                         <div className="flex justify-between">
-                            <p className="w-96">
+                            <p className="w-96 font-medium">
                                 acessar os favoritos
                             </p>
                             <button>
