@@ -4,6 +4,7 @@ import { HomeHeader } from "../../components/home-header"
 import produto1 from "../../assets/images/prod1.png"
 import produto2 from "../../assets/images/prod2.png"
 import produto3 from "../../assets/images/prod3.png"
+import produto4 from "../../assets/images/prod4.png"
 import { ProductCard } from "../../components/product-card"
 
 export function HomePage(){
@@ -120,13 +121,45 @@ export function HomePage(){
                 </div>
 
 
+                <div className="flex flex-col justify-center w-full p-5 rounded-xl bg-white shadow-xl mt-20 px-10">
 
+                    <div className="w-full h-auto flex justify-start">
+                        <h1 className="text-3xl font-bold">Destaques - Cantina</h1>
+                    </div>
 
+                    <div className="flex flex-row justify-center gap-11">
 
+                        <ProductCard 
+                            src={produto4}
+                            alt="Coca Cola"
+                            title="Coca Cola"
+                            description="Coca Cola"
+                            value={10}
+                        />
+                        <ProductCard 
+                            src={produto4}
+                            alt="Coca Cola"
+                            title="Coca Cola"
+                            description="Coca Cola"
+                            value={5}
+                        />
+                        <ProductCard 
+                            src={produto4}
+                            alt="Coca Cola"
+                            title="Coca Cola"
+                            description="Coca Cola"
+                            value={15}
+                        />
+
+                    </div>
+
+                </div>
 
 
 
             </main>
+
+            
 
         </div>
     )
