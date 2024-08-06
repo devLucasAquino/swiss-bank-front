@@ -2,14 +2,20 @@ import { Link } from "react-router-dom";
 import { BackButton } from "../../components/back-button";
 import { PrimaryButton } from "../../components/primary-button";
 
-export function PasswordLogin(){
+interface PasswordLoginProps{
+    ClosePasswordLogin: () => void,
+}
+
+export function PasswordLogin({
+    ClosePasswordLogin
+}:PasswordLoginProps){
     return(
         <div className='w-full flex justify-center items-center flex-1'>
                     <div className='flex justify-center bg-white items-center p-9 rounded-2xl w-[640px]'>
                        <div className='flex flex-col space-y-9 w-full h-full'>
-                        <Link to={`/`}>
-                            <BackButton />
-                        </Link>
+
+                        <BackButton onClick={ClosePasswordLogin} />
+
                          <div className='space-y-1'>
                                 <h3 className='text-2xl font-bold font-sans'>Digite sua senha</h3>
                                 <p className='font-medium text-zinc-600'>nomeusuario</p>

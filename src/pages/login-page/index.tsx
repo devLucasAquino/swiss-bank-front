@@ -14,6 +14,11 @@ export function LoginPage(){
         setPasswordLogin(true);
     }
 
+    function ClosePasswordLogin(){
+        setPasswordLogin(false);
+        setUserLogin(true);
+    }
+
 
     return(
         <div className="h-screen flex justify-center flex-col bg-gradient-to-t from-red-700 to-red-800 gap-24 bg-no-repeat bg-center">
@@ -27,7 +32,9 @@ export function LoginPage(){
             )}
 
             {passwordLogin && (
-                <PasswordLogin />
+                <PasswordLogin
+                    ClosePasswordLogin={ClosePasswordLogin}
+                />
             )}
 
             <LoginAndRegisterFooter />
