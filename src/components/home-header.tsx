@@ -1,8 +1,21 @@
 import { ChevronRight, Eye, Settings } from "lucide-react"
 import logo from "../assets/images/logotipo.png"
 import { Link } from "react-router-dom"
+import { useState } from "react"
+import { DrawerMenu } from "./drawer-menu";
 
 export function HomeHeader(){
+    const [ openSettingsModal, setOpenSettingsModal ] = useState(false);
+
+    function openSettings(){
+        setOpenSettingsModal(true)
+    }
+
+    function closeSettings(){
+        setOpenSettingsModal(false)
+    }
+
+
     return(
         <header className="">
             <div className="flex p-6 justify-between bg-gradient-to-t from-red-900 to-red-600">
@@ -26,7 +39,9 @@ export function HomeHeader(){
                                 <p className="text-zinc-100 hover:text-zinc-200 text-2xl font-bold">Cantina</p>
                             </button>
                         </Link>
-                        <Settings className="text-zinc-100 hover:text-zinc-200 size-8" />
+                        <button onClick={openSettings} onBlur={closeSettings}>
+                            <Settings className="text-zinc-100 hover:text-zinc-200 size-8" />
+                        </button>
                     </nav>
                 </div>
             </div>
@@ -56,6 +71,11 @@ export function HomeHeader(){
                 </div>
             </div>
 
+            {openSettingsModal && (
+                <DrawerMenu 
+                    isOpen={openSettingsModal}
+                />
+            )}
 
         </header>
     )
