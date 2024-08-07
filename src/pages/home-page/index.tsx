@@ -29,25 +29,26 @@ export function HomePage(){
                     </div>
 
 
+                    <Link to={'/favorites'}>
+                        <div className="w-[550px] h-32 space-y-3 p-5 rounded-xl bg-white hover:bg-slate-200 shadow-xl">
 
-                    <div className="w-[550px] h-32 space-y-3 p-5 rounded-xl bg-white shadow-xl">
-
-                        <div className="flex space-x-2 items-center">
-                            <Heart className="size-7 font-bold " />
-                            <h2 className="text-2xl font-bold">Favoritos</h2>
-                        </div>
-                        <div className="flex justify-between">
-                            <p className="w-96 font-medium ml-10">
-                                acessar os favoritos
-                            </p>
-                            <Link to={'/favorites'}>
+                            <div className="flex space-x-2 items-center">
+                                <Heart className="size-7 font-bold " />
+                                <h2 className="text-2xl font-bold">Favoritos</h2>
+                            </div>
+                            <div className="flex justify-between">
+                                <p className="w-96 font-medium ml-10">
+                                    acessar os favoritos
+                                </p>
+                                
                                 <button>
                                     <ChevronRight />
                                 </button>
-                            </Link>
-                        </div>
+                                
+                            </div>
 
-                    </div>
+                        </div>
+                    </Link>
 
 
                 </div>

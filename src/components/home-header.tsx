@@ -13,20 +13,20 @@ export function HomeHeader(){
                     <nav className="flex space-x-7">
                         <Link to={'/swissstore'}>
                             <button>
-                                <p className="text-zinc-100 text-2xl font-bold">Swiss Store</p>
+                                <p className="text-zinc-100 hover:text-zinc-200 text-2xl font-bold">Swiss Store</p>
                             </button>
                         </Link>
                         <Link to={'/library'}>
                             <button>
-                                <p className="text-zinc-100 text-2xl font-bold">Biblioteca</p>
+                                <p className="text-zinc-100 hover:text-zinc-200 text-2xl font-bold">Biblioteca</p>
                             </button>
                         </Link>
                         <Link to={'/canteen'}>
                             <button>
-                                <p className="text-zinc-100 text-2xl font-bold">Cantina</p>
+                                <p className="text-zinc-100 hover:text-zinc-200 text-2xl font-bold">Cantina</p>
                             </button>
                         </Link>
-                        <Settings className="text-zinc-100 size-8" />
+                        <Settings className="text-zinc-100 hover:text-zinc-200 size-8" />
                     </nav>
                 </div>
             </div>
