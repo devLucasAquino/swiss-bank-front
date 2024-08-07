@@ -39,7 +39,7 @@ export function HomeHeader(){
                                 <p className="text-zinc-100 hover:text-zinc-200 text-2xl font-bold">Cantina</p>
                             </button>
                         </Link>
-                        <button onClick={openSettings} onBlur={closeSettings}>
+                        <button onClick={openSettings}>
                             <Settings className="text-zinc-100 hover:text-zinc-200 size-8" />
                         </button>
                     </nav>
@@ -74,6 +74,7 @@ export function HomeHeader(){
             {openSettingsModal && (
                 <DrawerMenu 
                     isOpen={openSettingsModal}
+                    closeSettings={closeSettings}
                 />
             )}
 

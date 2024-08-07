@@ -1,18 +1,25 @@
 import { Link } from "react-router-dom"
 import logo from "../assets/images/logotipo.png"
-import { Book, Coffee, Gift, Heart, House, ShoppingBag, ShoppingCart, User } from "lucide-react"
+import { Book, Coffee, Gift, Heart, House, ShoppingBag, ShoppingCart, User, X } from "lucide-react"
 
 interface DrawerMenuProps{
     isOpen: boolean,
+    closeSettings: () => void;
 }
 
 export function DrawerMenu({
     isOpen,
+    closeSettings
 }:DrawerMenuProps){
 
     return(
         <div className={`absolute p-10 bg-red-800 h-screen w-auto top-0 transition duration-1000 ${isOpen ? 'right-0' : '-right-60'}` }>
-            <img  className="w-60" src={logo} alt="logotipo SwissWallet" />
+            <div className="flex">
+                <img  className="w-60" src={logo} alt="logotipo SwissWallet" />
+                <button onClick={closeSettings}>
+                    <X className="size-5 text-white font-medium"/>
+                </button>
+            </div>
             <div className="bg-white w-full h-[1px]" />
             <div className="w-full flex justify-center mt-5 mb-5">
                 <nav>
