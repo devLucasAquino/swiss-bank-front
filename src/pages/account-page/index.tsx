@@ -1,7 +1,7 @@
 import { SquarePen } from "lucide-react";
 import { HomeFooter } from "../../components/home-footer";
 import { HomeHeader } from "../../components/home-header";
-import { DataUserAccount } from "../../components/data-user-account";
+import { DataUserAccount } from "./data-user-account";
 
 export function AccountPage(){
     return(
@@ -9,7 +9,7 @@ export function AccountPage(){
             
             <HomeHeader />
 
-            <main className="mr-40 ml-40">
+            <main className="mr-40 ml-40 space-y-14">
 
 
                 <div className="flex items-center">
@@ -21,9 +21,11 @@ export function AccountPage(){
                 
                 <div className="w-full bg-white rounded-xl p-5 shadow-lg flex flex-col justify-center">
                     <div className="w-full flex justify-end">
-                        <div className="w-10 h-10 bg-red-600 p-2 rounded-md shadow-md">
-                            <SquarePen className="text-white bg-red-600" />
-                        </div>
+                        <button>
+                            <div className="w-10 h-10 bg-red-600 hover:bg-red-800 p-2 rounded-md shadow-2xl">
+                                <SquarePen className="text-white bg-transparent" />
+                            </div>
+                        </button>
                     </div>
 
                     <DataUserAccount 
@@ -43,6 +45,62 @@ export function AccountPage(){
                         description="11098766789"
                     />
                     
+                </div>
+
+                <div className="w-full bg-white rounded-xl p-5 shadow-lg flex flex-col justify-center">
+
+                    <div className="w-full flex justify-end">
+                        <button>
+                            <div className="w-10 h-10 bg-red-600 hover:bg-red-800 p-2 rounded-md shadow-2xl">
+                                <SquarePen className="text-white bg-transparent" />
+                            </div>
+                        </button>
+                    </div>
+
+                    <DataUserAccount 
+                        title="Cidade"
+                        description="São Paulo"
+                    />
+                    <DataUserAccount 
+                        title="Bairro"
+                        description="Bela Vista"
+                    />
+                    <DataUserAccount 
+                        title="CEP"
+                        description="94948-130"
+                    />
+                    <DataUserAccount 
+                        title="Rua"
+                        description="Conselheiro de Andrade"
+                    />
+                    <DataUserAccount 
+                        title="Complemento"
+                        description="29, apt 10"
+                    />
+
+
+                </div>
+
+                <div className="w-full bg-white rounded-xl p-5 shadow-lg flex flex-col justify-center">
+
+                    <div className="w-full flex justify-end">
+                        <button>
+                            <div className="w-10 h-10 bg-red-600 hover:bg-red-800 p-2 rounded-md shadow-2xl">
+                                <SquarePen className="text-white bg-transparent" />
+                            </div>
+                        </button>
+                    </div>
+
+                    <DataUserAccount 
+                        title="E-mail"
+                        description="joao.alves@senaisp.com"
+                    />
+                    <DataUserAccount 
+                        title="Senha"
+                        description="*****"
+                    />
+
+
                 </div>
 
 
