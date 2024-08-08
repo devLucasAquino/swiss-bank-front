@@ -2,14 +2,30 @@ import { SquarePen } from "lucide-react";
 import { HomeFooter } from "../../components/home-footer";
 import { HomeHeader } from "../../components/home-header";
 import { DataUserAccount } from "./data-user-account";
+import { useState } from "react";
+import { ChangePasswordModal } from "./change-password-modal";
 
 export function AccountPage(){
+    const [ isOpenChangePasswordModal, setIsOpenChangePasswordModal ] = useState(false);
+
+    function OpenChangePasswordModal(){
+        setIsOpenChangePasswordModal(true)
+    }
+    function CloseChangePasswordModal(){
+        setIsOpenChangePasswordModal(false)
+    }
+
     return(
         <div className="bg-slate-200 bg-opacity-50 space-y-20 h-auto">
             
             <HomeHeader />
 
             <main className="mr-40 ml-40 space-y-14">
+                {isOpenChangePasswordModal && (
+                    <ChangePasswordModal 
+                        CloseChangePasswordModal={CloseChangePasswordModal}
+                    />
+                )}
 
 
                 <div className="flex items-center">
@@ -84,7 +100,7 @@ export function AccountPage(){
                 <div className="w-full bg-white rounded-xl p-5 shadow-lg flex flex-col justify-center">
 
                     <div className="w-full flex justify-end">
-                        <button>
+                        <button onClick={OpenChangePasswordModal}>
                             <div className="w-10 h-10 bg-red-600 hover:bg-red-800 p-2 rounded-md shadow-2xl">
                                 <SquarePen className="text-white bg-transparent" />
                             </div>
@@ -102,6 +118,8 @@ export function AccountPage(){
 
 
                 </div>
+
+                
 
 
 
