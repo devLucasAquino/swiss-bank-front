@@ -55,7 +55,7 @@ export function DrawerMenu({
                             </span>
                         </div>
                     </Link>
-                    <Link to={'/'}>
+                    <Link to={'/account'}>
                         <div className="flex justify-center items-center space-x-2 p-3">
                             <User className="text-white size-5 font-bold" />
                             <span className="text-white font-medium">

@@ -26,21 +26,21 @@ export function HomeHeader(){
                     <nav className="flex space-x-7">
                         <Link to={'/swissstore'}>
                             <button>
-                                <p className="text-zinc-100 hover:text-zinc-200 text-2xl font-bold">Swiss Store</p>
+                                <p className="text-zinc-100 hover:text-zinc-300 text-2xl font-bold">Swiss Store</p>
                             </button>
                         </Link>
                         <Link to={'/library'}>
                             <button>
-                                <p className="text-zinc-100 hover:text-zinc-200 text-2xl font-bold">Biblioteca</p>
+                                <p className="text-zinc-100 hover:text-zinc-300 text-2xl font-bold">Biblioteca</p>
                             </button>
                         </Link>
                         <Link to={'/canteen'}>
                             <button>
-                                <p className="text-zinc-100 hover:text-zinc-200 text-2xl font-bold">Cantina</p>
+                                <p className="text-zinc-100 hover:text-zinc-300 text-2xl font-bold">Cantina</p>
                             </button>
                         </Link>
                         <button onClick={openSettings}>
-                            <Settings className="text-zinc-100 hover:text-zinc-200 size-8" />
+                            <Settings className="text-zinc-100 hover:text-zinc-300 size-8" />
                         </button>
                     </nav>
                 </div>
@@ -56,12 +56,12 @@ export function HomeHeader(){
 
                     <div className="flex flex-col space-y-2">
                         <div className="flex items-center">
-                            <button>
+                            <Link to={'/extract'}>
                                 <div className="flex items-center">
                                     <span className="font-medium">ver extrato</span>
                                     <ChevronRight />
                                 </div>
-                            </button>
+                            </Link>
                         </div>
                         <div className="flex justify-end">
                             <Eye />

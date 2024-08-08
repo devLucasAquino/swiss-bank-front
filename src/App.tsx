@@ -10,6 +10,8 @@ import { CanteenPage } from "./pages/canteen-page";
 import { LibraryPage } from "./pages/library-page";
 import { FavoritesPage } from "./pages/favorites-page";
 import { SwissStorePage } from "./pages/swiss-store-page";
+import { AccountPage } from "./pages/account-page";
+import { ExtractPage } from "./pages/extract-page";
 
 const router = createBrowserRouter([
   {path: '/', element: <LoginPage />},
@@ -19,6 +21,8 @@ const router = createBrowserRouter([
   {path: '/library', element: <LibraryPage />},
   {path: '/favorites', element: <FavoritesPage />},
   {path: '/swissstore', element: <SwissStorePage />},
+  {path: '/account', element: <AccountPage />},
+  {path: '/extract', element: <ExtractPage />},
 ]);
 
 function App() {
