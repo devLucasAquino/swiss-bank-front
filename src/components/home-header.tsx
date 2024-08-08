@@ -1,4 +1,4 @@
-import { ChevronRight, Eye, Settings } from "lucide-react"
+import { ChevronRight, Eye, EyeOff, Settings } from "lucide-react"
 import logo from "../assets/images/logotipo.png"
 import { Link } from "react-router-dom"
 import { useState } from "react"
@@ -6,6 +6,7 @@ import { DrawerMenu } from "./drawer-menu";
 
 export function HomeHeader(){
     const [ openSettingsModal, setOpenSettingsModal ] = useState(false);
+    const [ isVisiblePoints, setIsVisiblePoints ] = useState(false);
 
     function openSettings(){
         setOpenSettingsModal(true)
@@ -15,6 +16,9 @@ export function HomeHeader(){
         setOpenSettingsModal(false)
     }
 
+    function visiblePoints(){
+        setIsVisiblePoints(!isVisiblePoints)
+    }
 
     return(
         <header className="">
@@ -47,11 +51,18 @@ export function HomeHeader(){
             </div>
 
             <div className="flex justify-center -mt-10">
-                <div className="flex justify-between w-[600] p-5 space-x-60 rounded-xl bg-white shadow-xl">
+                <div className="flex justify-between w-[600] h-32 items-center p-5 space-x-32 rounded-xl bg-white shadow-xl">
 
                     <div>
                         <h2 className="font-medium text-lg">Saldo</h2>
-                        <p className="font-bold text-2xl">Pontos *****</p>
+                        <div className="flex m-w-[300px] gap-3">
+                            <span className="font-bold text-2xl w-auto">
+                                Pontos
+                            </span>
+                            <input className="font-bold text-2xl flex-1 bg-white" disabled value={123456} type={
+                                isVisiblePoints ? 'text' : 'password'
+                            }/>
+                        </div>
                     </div>
 
                     <div className="flex flex-col space-y-2">
@@ -63,9 +74,15 @@ export function HomeHeader(){
                                 </div>
                             </Link>
                         </div>
-                        <div className="flex justify-end">
-                            <Eye />
-                        </div>
+                        <button onClick={visiblePoints} >
+                            <div className="flex justify-end">
+                                {isVisiblePoints ? (
+                                    <Eye />
+                                ) : (
+                                    <EyeOff />
+                                )}
+                            </div>
+                        </button>
                     </div>
 
                 </div>
